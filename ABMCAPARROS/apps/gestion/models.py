@@ -20,11 +20,11 @@ class Alumno(models.Model):
 
 class Curso(models.Model):
     Nombre = models.CharField(max_length=50)
-    Creditos = models.PositiveSmallIntegerField()
+    Horas = models.PositiveSmallIntegerField()
     Estado = models.BooleanField(default=True)
 
     def __str__(self):
-        return "{0} ({1})".format(self.Nombre, self.Creditos)
+        return "{0} ({1})".format(self.Nombre, self.Horas)
 
 class Matricula(models.Model):
     Alumno = models.ForeignKey(Alumno, null=False, blank=False, on_delete=models.CASCADE)
